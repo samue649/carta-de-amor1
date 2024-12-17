@@ -1,0 +1,134 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    background-image: url('https://www.transparenttextures.com/patterns/star.png'); /* Fondo estrellado */
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.letter {
+    text-align: center;
+    max-width: 700px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.animated-header {
+    font-size: 3em;
+    font-family: 'Sacramento', cursive;
+    color: #ff66b3;
+    animation: slideIn 2s ease-out;
+}
+
+.description {
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-top: 20px;
+    color: #ffd9e6;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeIn 3s ease-out 1s forwards;
+}
+
+#finalMessage {
+    font-size: 3.5em;
+    color: #ffcc00;
+    font-weight: bold;
+    display: none;
+    opacity: 0;
+    animation: fadeInText 3s ease-out forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+.fireworks {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: explode 1.8s ease-out forwards, colorChange 1.5s infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(5);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    75% {
+        background-color: pink;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
